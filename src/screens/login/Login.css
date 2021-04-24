@@ -1,0 +1,29 @@
+.headingStyle {
+  padding-left: 20px;
+}
+
+.loginPageStyle {
+  margin-top: 15px;
+}
+
+.loginPageCardStyle {
+  padding: 20px;
+  height: 250px;
+  width: 400px;
+  margin: 20px, auto;
+  display: flex;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginPageInputs {
+  padding: 20px;
+}
+
+.buttonLoginPage {
+  margin-top: 20px;
+}
+
+.loginPageInputStyles {
+}
