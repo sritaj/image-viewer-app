@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Login.css";
-import { Container, Grid, Paper } from "@material-ui/core";
 import { FormControl } from "@material-ui/core";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
@@ -43,29 +42,6 @@ class Login extends Component {
 
   render() {
     return (
-      /*
-      <Grid>
-        <Paper elevation={10} style={paperSytle}>
-          <heading className="headingStyle">LOGIN</heading>{" "}
-          <div className="loginPageStyle">
-            <FormControl required>
-              <InputLabel htmlFor="username">Username</InputLabel>
-              <Input id="username" type="text" />
-            </FormControl>
-            <br></br>
-            <FormControl required>
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <Input id="password" type="password" />
-            </FormControl>
-            <br />
-            <br />
-            <Button variant="contained" color="primary">
-              LOGIN
-            </Button>
-          </div>
-        </Paper>
-      </Grid>
-      */
       <Card className="loginPageCardStyle">
         <div className="loginPageStyle">
           <heading className="headingStyle">LOGIN</heading>
