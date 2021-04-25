@@ -22,9 +22,10 @@ import "./Login.css";
 
 //Constant - Stores the default user details.
 const userDetails = {
-  username: "user",
-  password: "password",
-  accessToken: "8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784",
+  username: "sritaj",
+  password: "sritaj",
+  accessToken:
+    "IGQVJXZAnhlUzRZAVWM1dzVQVzlRZAjIzSmhHNDVEYmgzcnFUM0NXQ2dTOEdHV0RfVWttdHNWbEVCRzNMZAWs0ZAi1ZAeWJyUVhaRDBLMl9YOXVTdDZA6UnJQMWRBa3JBNnNzaGdQVlBWRHVpQTR3bWRzWUltLQZDZD",
 };
 
 /**

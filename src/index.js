@@ -2,17 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
-import App from "./App";
-import Home from "./screens/home/Home";
-import Login from "./screens/login/Login";
+import ImageViewer from "./ImageViewer";
 import { BrowserRouter as Router } from "react-router-dom";
-import history from "./History";
 
 //ReactDOM.render(<Login />, document.getElementById("root"));
 
 ReactDOM.render(
-  <Router history={history}>
-    <App />
+  <Router>
+    <ImageViewer />
   </Router>,
   document.getElementById("root")
 );
