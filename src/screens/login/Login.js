@@ -32,18 +32,6 @@ class Login extends Component {
     };
   }
 
-  /*
-  loginClickHandler = () => {
-    this.state.username === ""
-      ? this.setState({ usernameRequired: "dispBlock" })
-      : this.setState({ usernameRequired: "dispNone" });
-
-    this.state.password === ""
-      ? this.setState({ passwordRequired: "dispBlock" })
-      : this.setState({ passwordRequired: "dispNone" });
-  };
-  */
-
   loginClickHandler = () => {
     if (this.state.username === "" || this.state.password === "") {
       this.state.username === ""
@@ -60,9 +48,7 @@ class Login extends Component {
     ) {
       this.setState({
         loginInfo: "dispNone",
-        //loginSuccess: true,
       });
-      //sessionStorage.setItem("access-token", userDetails.accessToken);
     } else {
       this.setState({
         loginInfo: "dispBlock",
@@ -71,33 +57,6 @@ class Login extends Component {
       });
     }
   };
-
-  /*
-  loginClickHandler = () => {
-    if (this.state.username === "") {
-      this.setState({ usernameRequired: "dispBlock" });
-      this.setState({ loginInfo: "dispNone" });
-    } else if (this.state.password === "") {
-      this.setState({ passwordRequired: "dispBlock" });
-      this.setState({ loginInfo: "dispNone" });
-    } else if (
-      this.state.username !== username ||
-      this.state.password !== password
-    ) {
-      this.setState({ usernameRequired: "dispNone" });
-      this.setState({ passwordRequired: "dispNone" });
-      this.setState({ loginInfo: "dispBlock" });
-    } else if (
-      this.state.username === username ||
-      this.state.password === password
-    ) {
-    } else {
-      this.setState({ loginInfo: "dispNone" });
-      this.setState({ usernameRequired: "dispNone" });
-      this.setState({ passwordRequired: "dispNone" });
-    }
-  };
-  */
 
   inputUsernameChangeHandler = (e) => {
     this.setState({ username: e.target.value });
