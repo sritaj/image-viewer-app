@@ -11,6 +11,11 @@ const inputStyle = {
   fullWidth: true,
 };
 
+const username = "sritaj";
+const password = "sritaj";
+const accesstoken =
+  "IGQVJXZAnhlUzRZAVWM1dzVQVzlRZAjIzSmhHNDVEYmgzcnFUM0NXQ2dTOEdHV0RfVWttdHNWbEVCRzNMZAWs0ZAi1ZAeWJyUVhaRDBLMl9YOXVTdDZA6UnJQMWRBa3JBNnNzaGdQVlBWRHVpQTR3bWRzWUltLQZDZD";
+
 class Login extends Component {
   constructor() {
     super();
@@ -19,9 +24,11 @@ class Login extends Component {
       passwordRequired: "dispNone",
       username: "",
       password: "",
+      loginInfo: "dispNone",
     };
   }
 
+  /*
   loginClickHandler = () => {
     this.state.username === ""
       ? this.setState({ usernameRequired: "dispBlock" })
@@ -30,6 +37,28 @@ class Login extends Component {
     this.state.password === ""
       ? this.setState({ passwordRequired: "dispBlock" })
       : this.setState({ passwordRequired: "dispNone" });
+  };
+  */
+
+  loginClickHandler = () => {
+    if (this.state.username === "") {
+      this.setState({ usernameRequired: "dispBlock" });
+      this.setState({ loginInfo: "dispNone" });
+    } else if (this.state.password === "") {
+      this.setState({ passwordRequired: "dispBlock" });
+      this.setState({ loginInfo: "dispNone" });
+    } else if (
+      this.state.username !== username ||
+      this.state.password !== password
+    ) {
+      this.setState({ usernameRequired: "dispNone" });
+      this.setState({ passwordRequired: "dispNone" });
+      this.setState({ loginInfo: "dispBlock" });
+    } else {
+      this.setState({ loginInfo: "dispNone" });
+      this.setState({ usernameRequired: "dispNone" });
+      this.setState({ passwordRequired: "dispNone" });
+    }
   };
 
   inputUsernameChangeHandler = (e) => {
@@ -74,6 +103,9 @@ class Login extends Component {
               />
               <FormHelperText className={this.state.passwordRequired}>
                 <span className="red">Required</span>
+              </FormHelperText>
+              <FormHelperText className={this.state.loginInfo}>
+                <span className="red">Incorret username and /or password</span>
               </FormHelperText>
             </FormControl>
             <br />
