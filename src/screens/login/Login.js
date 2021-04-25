@@ -8,6 +8,7 @@ import Card from "@material-ui/core/Card";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import Header from "../../common/header/Header";
+import history from "../../History";
 
 const inputStyle = {
   fullWidth: true,
@@ -29,6 +30,7 @@ class Login extends Component {
       username: "",
       password: "",
       loginInfo: "dispNone",
+      auth: false,
     };
   }
 
@@ -48,7 +50,10 @@ class Login extends Component {
     ) {
       this.setState({
         loginInfo: "dispNone",
+        auth: true,
       });
+      sessionStorage.setItem("access-token", validUser.accessToken);
+      history.push("/");
     } else {
       this.setState({
         loginInfo: "dispBlock",
@@ -67,6 +72,9 @@ class Login extends Component {
   };
 
   render() {
+    if (this.state.auth === true) {
+      return <Redirect to="/home" />;
+    }
     return (
       <div>
         <Header />
