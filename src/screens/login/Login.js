@@ -6,6 +6,8 @@ import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import FormHelperText from "@material-ui/core/FormHelperText";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "../../common/header/Header";
 
 const inputStyle = {
   fullWidth: true,
@@ -71,55 +73,60 @@ class Login extends Component {
 
   render() {
     return (
-      <Card className="loginPageCardStyle">
-        <div className="loginPageStyle">
-          <heading className="headingStyle">LOGIN</heading>
-          <br></br>
-          <div className="loginPageInputs">
-            <FormControl required className="styleFormControl">
-              <InputLabel htmlFor="username">Username</InputLabel>
-              <Input
-                style={inputStyle}
-                className="loginPageInputStyles"
-                id="username"
-                type="text"
-                username={this.state.username}
-                onChange={this.inputUsernameChangeHandler}
-              />
-              <FormHelperText className={this.state.usernameRequired}>
-                <span className="red">Required</span>
-              </FormHelperText>
-            </FormControl>
+      <div>
+        <Header />
+        <Card className="loginPageCardStyle">
+          <div className="loginPageStyle">
+            <heading className="headingStyle">LOGIN</heading>
             <br></br>
-            <FormControl required className="styleFormControl">
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <Input
-                style={inputStyle}
-                className="loginPageInputStyles"
-                id="password"
-                type="password"
-                password={this.state.password}
-                onChange={this.inputPasswordChangeHandler}
-              />
-              <FormHelperText className={this.state.passwordRequired}>
-                <span className="red">Required</span>
-              </FormHelperText>
-              <FormHelperText className={this.state.loginInfo}>
-                <span className="red">Incorret username and /or password</span>
-              </FormHelperText>
-            </FormControl>
-            <br />
-            <br />
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={this.loginClickHandler}
-            >
-              LOGIN
-            </Button>
+            <div className="loginPageInputs">
+              <FormControl required className="styleFormControl">
+                <InputLabel htmlFor="username">Username</InputLabel>
+                <Input
+                  style={inputStyle}
+                  className="loginPageInputStyles"
+                  id="username"
+                  type="text"
+                  username={this.state.username}
+                  onChange={this.inputUsernameChangeHandler}
+                />
+                <FormHelperText className={this.state.usernameRequired}>
+                  <span className="red">Required</span>
+                </FormHelperText>
+              </FormControl>
+              <br></br>
+              <FormControl required className="styleFormControl">
+                <InputLabel htmlFor="password">Password</InputLabel>
+                <Input
+                  style={inputStyle}
+                  className="loginPageInputStyles"
+                  id="password"
+                  type="password"
+                  password={this.state.password}
+                  onChange={this.inputPasswordChangeHandler}
+                />
+                <FormHelperText className={this.state.passwordRequired}>
+                  <span className="red">Required</span>
+                </FormHelperText>
+                <FormHelperText className={this.state.loginInfo}>
+                  <span className="red">
+                    Incorret username and /or password
+                  </span>
+                </FormHelperText>
+              </FormControl>
+              <br />
+              <br />
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.loginClickHandler}
+              >
+                LOGIN
+              </Button>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     );
   }
 }
