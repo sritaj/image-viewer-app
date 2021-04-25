@@ -2,8 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
-import Home from "./screens/home/Home";
-import Login from "./screens/login/Login";
+import ImageViewer from "./ImageViewer";
+import { BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(<Login />, document.getElementById("root"));
+//ReactDOM.render(<Login />, document.getElementById("root"));
+
+ReactDOM.render(
+  <Router>
+    <ImageViewer />
+  </Router>,
+  document.getElementById("root")
+);
 registerServiceWorker();

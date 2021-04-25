@@ -1,41 +1,26 @@
-.headingStyle {
-  padding-left: 20px;
-}
-
-.loginPageStyle {
-  margin-top: 15px;
-}
-
-.loginPageCardStyle {
-  padding: 20px;
-  height: 250px;
-  width: 400px;
-  margin: 20px, auto;
+.login-card-flex-container {
   display: flex;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.loginPageInputs {
-  padding: 20px;
+.login-card {
+  width: 400px;
+  margin-top: 10px;
 }
 
-.buttonLoginPage {
-  margin-top: 20px;
+.login-form-control {
+  width: 350px;
 }
 
-.loginPageInputStyles {
-}
-
-.dispNone {
+.display-none {
   display: none;
 }
 
-.dispBlock {
+.display-block {
   display: block;
 }
 
-.red {
+.form-helper-text-red-color {
   color: red;
 }
