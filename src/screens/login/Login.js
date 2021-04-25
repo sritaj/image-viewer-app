@@ -6,17 +6,19 @@ import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import Header from "../../common/header/Header";
 
 const inputStyle = {
   fullWidth: true,
 };
 
-const username = "sritaj";
-const password = "sritaj";
-const accesstoken =
-  "IGQVJXZAnhlUzRZAVWM1dzVQVzlRZAjIzSmhHNDVEYmgzcnFUM0NXQ2dTOEdHV0RfVWttdHNWbEVCRzNMZAWs0ZAi1ZAeWJyUVhaRDBLMl9YOXVTdDZA6UnJQMWRBa3JBNnNzaGdQVlBWRHVpQTR3bWRzWUltLQZDZD";
+const validUser = {
+  username: "sritaj",
+  password: "sritaj",
+  accesstoken:
+    "IGQVJXZAnhlUzRZAVWM1dzVQVzlRZAjIzSmhHNDVEYmgzcnFUM0NXQ2dTOEdHV0RfVWttdHNWbEVCRzNMZAWs0ZAi1ZAeWJyUVhaRDBLMl9YOXVTdDZA6UnJQMWRBa3JBNnNzaGdQVlBWRHVpQTR3bWRzWUltLQZDZD",
+};
 
 class Login extends Component {
   constructor() {
@@ -43,6 +45,35 @@ class Login extends Component {
   */
 
   loginClickHandler = () => {
+    if (this.state.username === "" || this.state.password === "") {
+      this.state.username === ""
+        ? this.setState({ usernameRequired: "dispBlock" })
+        : this.setState({ usernameRequired: "dispNone" });
+      this.state.password === ""
+        ? this.setState({ passwordRequired: "dispBlock" })
+        : this.setState({ passwordRequired: "dispNone" });
+      this.setState({ loginInfo: "dispNone" });
+      return;
+    } else if (
+      this.state.username === validUser.username &&
+      this.state.password === validUser.password
+    ) {
+      this.setState({
+        loginInfo: "dispNone",
+        //loginSuccess: true,
+      });
+      //sessionStorage.setItem("access-token", userDetails.accessToken);
+    } else {
+      this.setState({
+        loginInfo: "dispBlock",
+        usernameRequired: "dispNone",
+        passwordRequired: "dispNone",
+      });
+    }
+  };
+
+  /*
+  loginClickHandler = () => {
     if (this.state.username === "") {
       this.setState({ usernameRequired: "dispBlock" });
       this.setState({ loginInfo: "dispNone" });
@@ -56,12 +87,17 @@ class Login extends Component {
       this.setState({ usernameRequired: "dispNone" });
       this.setState({ passwordRequired: "dispNone" });
       this.setState({ loginInfo: "dispBlock" });
+    } else if (
+      this.state.username === username ||
+      this.state.password === password
+    ) {
     } else {
       this.setState({ loginInfo: "dispNone" });
       this.setState({ usernameRequired: "dispNone" });
       this.setState({ passwordRequired: "dispNone" });
     }
   };
+  */
 
   inputUsernameChangeHandler = (e) => {
     this.setState({ username: e.target.value });
